@@ -17,7 +17,7 @@ export default function Navigation() {
       <Box>
         <Stack direction={"row"} gap={2}>
           <Link style={{ textDecoration: "none" }} to="/">
-            <Typography color={"white"}>Expense Form</Typography>
+            <Typography color={"white"}>Expenses</Typography>
           </Link>
           <Link style={{ textDecoration: "none" }} to="/transactions">
             <Typography color={"white"}>Transactions</Typography>

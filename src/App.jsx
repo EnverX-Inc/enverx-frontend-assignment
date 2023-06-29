@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import Navigation from "./components/Navigation";
 
@@ -5,7 +6,9 @@ function App() {
   return (
     <>
       <Navigation />
-      <Outlet />
+      <Container maxWidth="lg">
+        <Outlet />
+      </Container>
     </>
   );
 }
