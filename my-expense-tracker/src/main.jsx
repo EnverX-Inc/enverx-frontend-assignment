@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Dashboard from "./Containers/Dashboard";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>Red Book</React.StrictMode>
+  <React.StrictMode>
+    <Dashboard />
+  </React.StrictMode>
 );
