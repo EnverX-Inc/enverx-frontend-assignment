@@ -1,5 +1,13 @@
+import { Outlet } from "react-router-dom";
+import Navigation from "./components/Navigation";
+
 function App() {
-  return <>Expense Tracker</>;
+  return (
+    <>
+      <Navigation />
+      <Outlet />
+    </>
+  );
 }
 
 export default App;
