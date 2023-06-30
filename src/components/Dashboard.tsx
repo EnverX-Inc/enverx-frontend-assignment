@@ -4,6 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import MuiAppBar, { AppBarProps } from "@mui/material/AppBar";
+import { Grid, Paper } from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
@@ -13,6 +14,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 
+import Transactions from "./Transactions";
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar)<AppBarProps>(({ theme }) => ({
@@ -85,7 +87,15 @@ const Dashboard: React.FC = () => {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}></Container>
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                  <Transactions />
+                </Paper>
+              </Grid>
+            </Grid>
+          </Container>
         </Box>
       </Box>
     </ThemeProvider>
