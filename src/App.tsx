@@ -1,9 +1,10 @@
 import "./App.css";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
     <>
-      <p>Enverx frontend task</p>
+      <Dashboard />
     </>
   );
 }
