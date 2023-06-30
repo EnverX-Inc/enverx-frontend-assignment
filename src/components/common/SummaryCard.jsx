@@ -1,6 +1,6 @@
-import { Card, Typography } from "@mui/material";
+import { Card, Chip, Stack, Typography } from "@mui/material";
 
-export default function SummaryCard({ title, description }) {
+export default function SummaryCard({ title, description, categories }) {
   return (
     <Card
       sx={{
@@ -8,7 +8,15 @@ export default function SummaryCard({ title, description }) {
       }}
     >
       <Typography variant="h5">{title}</Typography>
-      <Typography variant="h3">{description}</Typography>
+      {description ? (
+        <Typography variant="h3">{description}</Typography>
+      ) : (
+        <Stack direction={"row"} gap={1}>
+          {categories.map((item) => (
+            <Chip label={item}></Chip>
+          ))}
+        </Stack>
+      )}
     </Card>
   );
 }

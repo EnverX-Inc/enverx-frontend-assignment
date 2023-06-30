@@ -43,21 +43,24 @@ export default function RecentHistory() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {list.map((row, i) => (
-              <TableRow
-                key={i}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {row.amount}
-                </TableCell>
-                <TableCell>{row.description}</TableCell>
-                <TableCell>{row.category}</TableCell>
-                <TableCell align="right">
-                  {format(new Date(row.date), "dd/MMMM/yyyy")}
-                </TableCell>
-              </TableRow>
-            ))}
+            {[...list]
+              ?.reverse()
+              .slice(0, 5)
+              .map((row, i) => (
+                <TableRow
+                  key={i}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {row.amount}
+                  </TableCell>
+                  <TableCell>{row.description}</TableCell>
+                  <TableCell>{row.category}</TableCell>
+                  <TableCell align="right">
+                    {format(new Date(row.date), "dd/MMMM/yyyy")}
+                  </TableCell>
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
         {list.length === 0 && <Typography p={2}>No transactions</Typography>}
