@@ -20,5 +20,6 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 const summaryRef = doc(db, "summary", "rxB6hLlpXWkNoAvjvzj3");
+const transactionRef = doc(db, "transactions", "VLgdpJsuikunTfLso3aD");
 
-export { app, auth, analytics, db, summaryRef };
+export { app, auth, analytics, db, summaryRef, transactionRef };

@@ -25,7 +25,7 @@ export default function Summary() {
   }, []);
 
   return (
-    <Stack direction={"row"} mt={2} gap={4}>
+    <Stack direction={"row"} mt={2} gap={4} flexWrap={"wrap"}>
       <SummaryCard title={"INCOME"} description={`₹ ${income}`} />
       <SummaryCard title={"EXPENSES"} description={`₹ ${expenses}`} />
       <SummaryCard title={"CATEGORIES"} description={"Something different"} />
