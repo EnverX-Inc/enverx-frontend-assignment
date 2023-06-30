@@ -4,7 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import MuiAppBar, { AppBarProps } from "@mui/material/AppBar";
-import { Grid, Paper } from "@mui/material";
+import { Button, Grid, Paper } from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
@@ -15,6 +15,7 @@ import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 
 import Transactions from "./Transactions";
+import AddTransaction from "./AddTransaction";
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar)<AppBarProps>(({ theme }) => ({
@@ -24,6 +25,8 @@ const AppBar = styled(MuiAppBar)<AppBarProps>(({ theme }) => ({
 const defaultTheme = createTheme();
 
 const Dashboard: React.FC = () => {
+  const [displayAddTransactionForm, setDisplayAddTransactionForm] =
+    React.useState(false);
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: "flex" }}>
@@ -66,7 +69,7 @@ const Dashboard: React.FC = () => {
           ></Toolbar>
 
           <List component="nav">
-            <ListItemButton>
+            <ListItemButton onClick={() => setDisplayAddTransactionForm(false)}>
               <ListItemIcon>
                 <DashboardIcon />
               </ListItemIcon>
@@ -90,11 +93,40 @@ const Dashboard: React.FC = () => {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                  <Transactions />
+                <Paper
+                  sx={{ p: 2, mb: 2, display: "flex", flexDirection: "column" }}
+                >
+                  {displayAddTransactionForm ? (
+                    <AddTransaction />
+                  ) : (
+                    <Transactions />
+                  )}
                 </Paper>
               </Grid>
             </Grid>
+            {!displayAddTransactionForm ? (
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <Paper
+                    sx={{
+                      mb: 10,
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <Button
+                      onClick={() => setDisplayAddTransactionForm(true)}
+                      variant="contained"
+                      sx={{
+                        p: 2,
+                      }}
+                    >
+                      Add Transaction
+                    </Button>
+                  </Paper>
+                </Grid>
+              </Grid>
+            ) : null}
           </Container>
         </Box>
       </Box>
