@@ -27,3 +27,37 @@ export const addTransactionApi = async (payload) => {
     });
   }
 };
+
+export const editTransactionApi = async (payload) => {
+  const { id } = payload;
+  const docSnap = await getDoc(transactionRef);
+  if (docSnap.exists()) {
+    const data = docSnap.data();
+    const updatedList = data.transactions.map((item) => {
+      if (item.id === id) {
+        //replace existing object with the new updated payload
+        item = payload;
+        return item;
+      } else {
+        return item;
+      }
+    });
+
+    await updateDoc(transactionRef, {
+      transactions: updatedList,
+    });
+  }
+};
+
+export const deleteTransactionApi = async (id) => {
+  const docSnap = await getDoc(transactionRef);
+  if (docSnap.exists()) {
+    const data = docSnap.data();
+    const updatedList = data.transactions.filter((item) => {
+      return item.id !== id;
+    });
+    await updateDoc(transactionRef, {
+      transactions: updatedList,
+    });
+  }
+};

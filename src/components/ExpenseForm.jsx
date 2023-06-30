@@ -1,19 +1,19 @@
 import { Autocomplete, Button, TextField } from "@mui/material";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { ADD_TRANSACTION } from "../store/actions";
+import { ADD_TRANSACTION, EDIT_TRANSACTION } from "../store/actions";
 import { addTransactionApi } from "../store/apis";
 import { format } from "date-fns";
 import { v4 as uuidv4 } from "uuid";
 
-export default function ExpenseForm({ handleClose }) {
+export default function ExpenseForm({ handleClose, data, edit }) {
   const dispatch = useDispatch();
   const [form, setForm] = useState({
-    id: uuidv4(),
-    amount: 0,
-    description: "",
-    date: format(new Date(), "yyyy-MM-dd"),
-    category: "",
+    id: data?.id ?? uuidv4(),
+    amount: data?.amount ?? 0,
+    description: data?.description ?? "",
+    date: data?.date ?? format(new Date(), "yyyy-MM-dd"),
+    category: data?.category ?? "",
   });
 
   const handleChange = (ev) => {
@@ -35,11 +35,18 @@ export default function ExpenseForm({ handleClose }) {
       date: form.date,
       category: form.category,
     };
-    dispatch({
-      type: ADD_TRANSACTION,
-      payload: payload,
-    });
-    await addTransactionApi(payload);
+    if (edit) {
+      dispatch({
+        type: EDIT_TRANSACTION,
+        payload,
+      });
+    } else {
+      dispatch({
+        type: ADD_TRANSACTION,
+        payload: payload,
+      });
+    }
+
     handleClose();
   };
   return (

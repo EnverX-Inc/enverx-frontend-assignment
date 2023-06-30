@@ -38,6 +38,7 @@ export default function RecentHistory() {
             <TableRow>
               <TableCell>Amount</TableCell>
               <TableCell>Description</TableCell>
+              <TableCell>Category</TableCell>
               <TableCell align="right">Date</TableCell>
             </TableRow>
           </TableHead>
@@ -51,6 +52,7 @@ export default function RecentHistory() {
                   {row.amount}
                 </TableCell>
                 <TableCell>{row.description}</TableCell>
+                <TableCell>{row.category}</TableCell>
                 <TableCell align="right">
                   {format(new Date(row.date), "dd/MMMM/yyyy")}
                 </TableCell>
@@ -63,21 +65,3 @@ export default function RecentHistory() {
     </Box>
   );
 }
-
-const rows = [
-  {
-    amount: "345",
-    date: "24/04/2023",
-    description: "Testinga kasdjcn kadj jkads ouw akdcspa ask .",
-  },
-  {
-    amount: "345",
-    date: "24/04/2021",
-    description: "Testinga kasdjcn kadj jkads ouw akdcspa ask .",
-  },
-  {
-    amount: "345",
-    date: "24/04/2023",
-    description: "Testinga kasdjcn kadj jkads ouw akdcspa ask .",
-  },
-];
