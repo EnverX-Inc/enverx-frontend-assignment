@@ -5,27 +5,12 @@ import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Typography from "@mui/material/Typography";
-
-// Generate hardcoded order data
-//TODO: Fetch data from backend
-function createData(
-  id: number,
-  date: string,
-  description: string,
-  amount: number,
-  category: string
-) {
-  return { id, date, description, amount, category };
-}
-
-const rows = [
-  createData(0, "16 Mar, 2023", "Rice and Oil", 300, "Grocery"),
-  createData(0, "18 Apr, 2023", "Cab to office", 175, "Travel"),
-  createData(0, "16 Mar, 2023", "Salary payment", 40000, "Salary"),
-  createData(0, "16 Mar, 2023", "Rent for flat", 10000, "Rent"),
-];
+import { useSelector } from "react-redux";
+import { RootState } from "../app/store";
 
 const Transactions: React.FC = () => {
+  const transactions = useSelector((state: RootState) => state.transctions);
+
   return (
     <React.Fragment>
       <Typography component="h2" variant="h6" color="primary" gutterBottom>
@@ -41,12 +26,12 @@ const Transactions: React.FC = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.description}</TableCell>
-              <TableCell>{`₹${row.amount}`}</TableCell>
-              <TableCell align="right">{row.category}</TableCell>
+          {transactions.map((transaction, index) => (
+            <TableRow key={index}>
+              <TableCell>{transaction.date}</TableCell>
+              <TableCell>{transaction.description}</TableCell>
+              <TableCell>{`₹${transaction.amount}`}</TableCell>
+              <TableCell align="right">{transaction.category}</TableCell>
             </TableRow>
           ))}
         </TableBody>
