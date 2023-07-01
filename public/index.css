@@ -1,0 +1,221 @@
+body{box-sizing: border-box;margin: 0;}
+
+#root{display: flex;justify-content: center;align-items: center;}
+*{box-sizing: border-box;margin: 0;}
+
+/* Styles for Homepage */
+#onboarding{width: 300px;height: 600px;margin-top: 40px;display: flex;flex-direction: column;;align-items: center;padding: 20px;border: 1px solid lightgray;
+  font-family: 'Inter', sans-serif;font-size: 15px;font-weight: 500}
+#onboarding_signup{width: 80%;height: 40px;border-radius: 10px;display: flex;justify-content: center;align-items: center;background-color: #7F3DFF;margin-bottom: 20px;}
+#onboarding_signup a:link,a:visited,a:hover,a:active{color: white ;text-decoration: none }
+#onboarding_login{width: 80%;height: 40px;border-radius: 10px;display: flex;justify-content: center;align-items: center;background-color: #EEE5FF;
+  font-family: 'Inter', sans-serif;font-size: 15px;font-weight: 600}
+#onboarding_login a:link{color: #7F3DFF  ;text-decoration: none }
+#onboarding_login a:visited{color: #7F3DFF  ;text-decoration: none}
+#onboarding_login a:hover{color: #7F3DFF  ;text-decoration: none }
+#onboarding_login a:active{color: #7F3DFF  ;text-decoration: none }
+#onboarding_sliders{display: flex;margin-bottom: 20px;}
+#onboarding_sliders div{width: 10px;height: 10px;border-radius: 20px;background-color: #EEE5FF;margin-right: 5px;}
+.onboarding_main{height: 80%;display: flex;flex-direction: column;align-items: center;}
+#onboarding_main_img_holder{height: 60%;width: 85%;}
+.onboarding_main img{height: 100%;width: 100%;}
+.onboarding_main h2{font-family: 'Arimo', sans-serif;font-size: 30px;font-weight: 400;color: black;margin: 0 0 20px 0;;}
+.onboarding_main p{font-family: 'Inter', sans-serif;font-size: 15px;font-weight: 500;color: #91919F;margin: 0 0 20px 10px;}
+
+/* Styles for SignUp and SignIn */
+.Sign{width: 300px;height: 600px;margin-top: 40px;display: flex;flex-direction: column;;align-items: center;padding: 20px;border: 1px solid lightgray;}
+.Sign h2{font-family: 'Arimo', sans-serif;font-size: 25px;font-weight: 400;margin-bottom: 50px;}
+.Sign form{height: 40%;display: flex;flex-direction: column;align-items: center;width: 100%;}
+.Sign form input{border: 0.5px solid rgb(219,219,219);width: 100%;height: 40px;border-radius: 10px;margin: 10px 0;}
+.SignUp_submit{background-color: #7F3DFF;height: 50px;font-family: 'Inter', sans-serif;font-size: 15px;font-weight: 400;cursor: pointer;;color: white;border-radius: 15px !important;}
+.Sign p{font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 500;color: #91919F}
+.Sign p a{font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 400;color: #7F3DFF;text-decoration: none;}
+.Sign h5{font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 400;color:red}
+/* Styles for New Account */
+
+#newAccount{width: 300px;height: 600px;margin-top: 40px;display: flex;flex-direction: column;;align-items: center;border: 1px solid lightgray;background-color: #7F3DFF;}
+#newAccount p{font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 500;color: white;margin: 20px 0;}
+#newAccount form{margin-top: auto;height: 40%;width: 100%;display: flex;flex-direction: column;}
+#newAccount_div{display: flex;flex-direction: column;height: 40%;}
+#newAccount_div label{color:#a0a0b0 ;font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 400;}
+#newAccount_div div{display: flex;margin-left: 10px;align-items: center;}
+#newAccount_div div p{color: white;border: none;font-family: 'Inter', sans-serif;font-size: 45px;margin: 0;}
+#newAccount_balance{background-color: #7F3DFF;height: 100%;width: 90%;color: white;border: none;font-family: 'Inter', sans-serif;font-size: 45px;font-weight: 500;}
+#newAccount_balance::placeholder{color: white;font-family: 'Inter', sans-serif;}
+#newAccount_balance:focus{outline: none;}
+#newAccount_main{background-color: white;width: 100%;height: 60%;border-top-left-radius: 20px;border-top-right-radius: 20px;display: flex;flex-direction: column;}
+#newAccount_main input{margin: 15px 0;width: 90%;margin-left: 10px;height: 40px;border:1px solid #9e9ea7;border-radius: 10px;}
+#newAccount_main input::placeholder{font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 400;color:#91919F;margin-left: 20px;}
+
+
+
+
+
+
+
+#account_options_parent{display: flex;flex-direction: column;height: 600px;border: 1px solid lightgray;margin-top: 40px;}
+
+#Account_home{width: 300px;height: 90%;display: flex;flex-direction: column;;align-items: center;}
+#Account_home_summary{height: 35%;background-color: #FFF6E5;display: flex;flex-direction: column;align-items: center;width: 100%;height: 40%}
+#Account_home_summary_top{display: flex;justify-content: space-around;width: 100%;margin: 10px 0;align-items: center;}
+#Account_home_summary_top img{width: 30px;height: 30px;border-radius: 20px;}
+#Account_home_summary_top select{border-radius: 15px !important;background-color: #FFF6E5;border: 1px solid #afafb9 !important;
+  font-family: 'Arimo', sans-serif;font-size: 15px;font-weight: 400;width: 40%;height: 40px;}
+#Account_home_summary_mid{display: flex;flex-direction: column;align-items: center;width: 100%;margin: 10px 0;}
+#Account_home_summary_mid p{font-family: 'Arimo', sans-serif;font-size: 15px;font-weight: 400;color: #9e9ea7;}
+#Account_home_summary_mid h1{font-family: 'Inter', sans-serif;font-size: 25px;font-weight: 400;color: black;}
+#Account_home_summary_bottom{display: flex;justify-content: space-around;width: 100%;margin: 10px 0;}
+#Account_home_summary_bottom_income{display: flex;flex-direction: column;background-color: #00A86B;width: 100px;height: 50px;display: flex;justify-content: center;align-items: center;border-radius: 10px;color: white;}
+#Account_home_summary_bottom_expense{display: flex;flex-direction: column;background-color: #FD3C4A;width: 100px;height: 50px;display: flex;justify-content: center;align-items: center;border-radius: 10px;color: white;} 
+#Account_home_summary_bottom_income h5,#Account_home_summary_bottom_expense h5{font-family: 'Arimo', sans-serif;font-size: 15px;font-weight: 400;color: white;}
+#Account_home_summary_bottom_income p,#Account_home_summary_bottom_expense p{font-family: 'Inter', sans-serif;font-size: 15px;font-weight: 400;color: white;}
+#Account_home_calendar{display: flex;margin: 15px 0;width: 90%;justify-content: space-between;}
+#Account_home_calendar div{font-family: 'Arimo', sans-serif;font-size: 13px;font-weight: 300;color: #91919F;width: 25%;height: 30px;cursor: pointer;display: flex;justify-content: center;align-items: center;}
+.selected{background-color: #FCEED4;color: #FCAC12 !important;font-family: 'Arimo', sans-serif;font-size: 13px;font-weight: 300;border-radius: 10px;
+  width: 25% !important;height: 30px !important;cursor: pointer;display: flex;justify-content: center;align-items: center}
+#Account_home_recent_tran{display: flex;margin: 5px 0px;width: 100%;}
+#Account_home_recent_tran h4{font-family: 'Arimo', sans-serif;font-size: 15px;font-weight: 400;color: black;margin-left: 10px;}
+#Account_home_recent_tran div{margin-left: auto; font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 400;color: black}
+#Account_home_options{display: flex;width: 100%;justify-content: space-around;margin-top: auto;}
+#Account_home_options div a{display: flex;flex-direction: column;justify-content: space-around;align-items: center;}
+#Account_home_options div a:link{font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 400;color: black;text-decoration: none;}
+#Account_home_options div a:visited{font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 400;color: black;text-decoration: none;}
+#Account_home_options div a:hover{font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 400;color: black;text-decoration: none;}
+#Account_home_options div a:active{font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 400;color: black;text-decoration: none;}
+#Account_home_options_mid{position: relative;display: inline-block;}
+#Account_home_options_mid img{width: 30px;height: 30px;}
+#Account_home_options_mid_div a img:hover{width: 35px !important;height: 35px !important;}
+#Account_home_options_mid_div{display: none;background-color: white;z-index: 1;position: absolute;height: 40px;}
+#Account_home_options_mid_div a img{width: 30px !important;height: 30px !important;margin-right: 10px;}
+#Account_home_options_mid:hover #Account_home_options_mid_div{display: flex;top:-40px;right: -30px;justify-content: center;align-items: center;}
+#Account_home_options div a img{width: 20px;height: 20px;}
+.transaction_list_item{display: flex;flex-direction: column;background-color: #d5d5e1;border-radius: 10px;height: 60px;width: 90%;margin: 10px 0;}
+.transaction_list_item div{display: flex;margin: 5px 0;align-items: center;}
+.transaction_list_item div h6{margin-left: auto;margin-right: 10px;font-family: 'Inter', sans-serif;font-size: 15px;font-weight: 500;}
+.transaction_list_item div p {margin-left: 10px;font-family: 'Arimo', sans-serif;font-size: 15px;font-weight: 300;}
+.transaction_list_item_edit{display: flex;}
+.transaction_list_item_edit p{margin-left: 12px;font-family: 'Inter', sans-serif;font-size: 14px;font-weight: 400;color: #a0a0b0;margin-bottom: 10px;}
+.transaction_list_item_edit div{display: flex;margin-left: auto;margin-right: 10px;}
+.transaction_list_item_edit_img_edit,.transaction_list_item_edit_img_del{width: 15px;height: 15px;margin-left: 5px;cursor: pointer;}
+#Account_home_transac_list{display: flex;flex-direction: column;width: 100%;align-items: center;overflow: scroll;height: 50%;overflow-x: hidden;overflow-y: auto;}
+.income{color: #00A86B;}
+.expense{color: #FD3C4A;}
+
+
+#chart{width: 300px;height: 90%;display: flex;flex-direction: column;align-items: center;}
+#chart img{width: 100%;height: 50%;margin-top: 100px;}
+#chart div{display: flex;margin-top: 10px;}
+#chart div p{font-family: 'Arimo', sans-serif;font-size: 20px;font-weight: 400;color: #9e9ea7;margin-right: 10px;cursor: pointer;}
+
+/* Styles for notications */
+#notification{width: 300px;height: 600px;margin-top: 40px;display: flex;flex-direction: column;;border: 1px solid lightgray;}
+#notification_top{display: flex;justify-content: space-between;align-items: center;margin-top: 5px;}
+#notification_top p{font-family: 'Arimo', sans-serif;font-size: 20px;font-weight: 400;margin-left: 60px;}
+#notification_top img{width: 30px;height: 30px;margin-left: auto;margin-right: 10px;}
+#notification_top a img{width: 20px;height: 20px;margin-left: 5px;}
+#notifcation_list{display: flex;flex-direction: column;margin-top: 50px;}
+#notifcation_list h3{font-family: 'Inter', sans-serif;font-size: 15px;font-weight: 400;margin:30px 0;}
+
+/* Styles for new Expense */
+
+.amountChange{width: 300px;height: 600px;margin-top: 40px;display: flex;flex-direction: column;;border: 1px solid lightgray;background-color: #FD3C4A;}
+.amountChange div{display: flex;}
+.amountChange div a img{width: 20px;height: 20px;margin-top: 15px;margin-left: 5px;}
+.amountChange div h2{margin: 10px auto;text-align: center;font-family: 'Arimo', sans-serif;font-size: 25px;font-weight: 400;margin-bottom: 50px;color: white;}
+.amountChange form{height: 60%;width: 100%;margin-top: auto;display: flex;flex-direction: column;}
+.amountChange_amount{display: flex;flex-direction: column;background-color: #FD3C4A;width: 100%;height: 30% ;}
+.amountChange_amount p{font-family: 'Inter', sans-serif;font-size: 15px;font-weight: 400;color: #91919F;margin-left: 10px;}
+.amountChange_amount div{display: flex;align-items: center;margin: 0;}
+.amountChange_amount div p{color: white;border: none;font-family: 'Inter', sans-serif;font-size: 45px;margin: 0;margin-left: 10px;}
+.amountChange_amount div input{background-color: #FD3C4A;height: 100%;width: 90%;color: white;border: none;font-family: 'Inter', sans-serif;font-size: 45px;font-weight: 500;}
+.amountChange_amount div input::placeholder{color: white;font-family: 'Inter', sans-serif;}
+.amountChange_amount div input:focus{outline: none;}
+.amountChange_last{height: 70%;width: 100%;background-color: white;border-top-left-radius: 20px;border-top-right-radius: 20px;display: flex;flex-direction: column;align-items: center;}
+.amountChange_last select,input{width: 90%;height: 50px;border: 1px solid #afafb9;margin: 10px;border-radius: 10px;}
+.amountIncome,.amountIncome_amount,.amountIncome_amount div input{background-color: #00A86B;}
+.amountTran,.amountTran_amount,.amountTran_amount div input{background-color: #0077FF;}
+#transaction_descr{display: flex;flex-direction: column;margin-top: auto;background-color: white;border-top-left-radius: 20px;border-top-right-radius: 20px;height: 60%;padding: 10px;align-items: center;}
+#transaction_descr div{display: flex;justify-content: space-between;width: 100%;height: 40%;}
+#transaction_descr div input{width: 40%;height: 30px;margin: 15px 0;border-radius: 10px;border: 1px solid rgb(219,219,219);}
+#transaction_descr input,select{width: 90%;height: 40px;margin: 10px 0;border-radius: 10px;border: 1px solid rgb(219,219,219);}
+
+
+
+#transaction{width: 300px;height: 90%;display: flex;flex-direction: column;padding: 20px;position: relative;}
+#transaction_filter{display: flex;margin: 5px 0;height: 10%;align-items: center;}
+#transaction_filter select{font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 500;color: black;width:40% ;height: 30px;}
+#transaction_filter img{width: 30px;height: 30px;margin-left: auto;}
+#transaction_report{width: 90%;background-color: #EEE5FF;margin: 10px 0;height: 30px;display: flex;align-items: center;border-radius: 5px;}
+#transaction_report a{color: #7F3DFF;margin-left: 10px;font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 400;text-decoration: none;}
+#transaction_report h6{margin-left: auto;margin-right: 15px;font-size: 20px;color: #7F3DFF;font-family: 'Inter', sans-serif;font-weight: 400;}
+#transaction_list{display: flex;flex-direction: column;overflow: scroll;overflow-x: hidden;height: 80%;overflow-y: auto;}
+#transaction_list > p{margin: 10px 0;}
+#transaction_list_main{display: flex;width: 100%;height: 50px;border-radius: 5px;background-color: #9e9ea7;align-items: center;}
+#transaction_list_main img{width: 40px;height: 40px;}
+#transaction_list_main_details{display: flex;flex-direction: column;width: 100%;}
+#transaction_list_main_details_category,#transaction_list_main_details_descr{display: flex;}
+#transaction_list_main_details_category p,#transaction_list_main_details_descr p{margin-left: auto;}
+#transaction_filter_list{display: none;flex-direction: column;height: 45%px;position: absolute;width: 100%;right: 0px;top: 235px;z-index: 2;border-top-left-radius: 20px;border-top-right-radius: 20px;background-color: white;}
+#transaction_filter_list div{display: flex;margin-top: 10px;align-items: center;margin-left: 10px;}
+#transaction_filter_list div p{font-family: 'Inter', sans-serif;font-size: 12px;font-weight: 500;color: black;}
+#transaction_filter_list div div{margin-left: auto;margin-right: 10px;width: 25%;height: 25px;display: flex;justify-content: center;align-items: center;background-color: #d0d0de;color: #7F3DFF;border-radius: 15px;cursor: pointer;}
+#transaction_filter_list_form {display: flex;flex-direction: column;}
+#transaction_filter_list_form label{font-family: 'Arimo', sans-serif;font-size: 17px;font-weight: 500;color: black;margin: 10px 10px;}
+#transaction_filter_list_form select{font-family: 'Inter', sans-serif;font-size: 15px;font-weight: 500;color: #7F3DFF;width: 90%;margin: 5px 10px;}
+#transaction_filter_list_form div{display: flex;align-items: center;;}
+#transaction_filter_list_form div select{width: 50%;margin-left: auto;margin-right: 10px;}
+#transaction_filter_list_form input{font-family: 'Inter', sans-serif;font-size: 15px;cursor: pointer;;font-weight: 500;background-color: #7F3DFF;color: white;height: 35px;}
+
+
+.financeReport_Expense{width: 300px;height: 600px;margin-top: 40px;display: flex;align-items: center;flex-direction: column;border: 1px solid lightgray;background-color: #FD3C4A;}
+.financeReport_Expense > p{color: #FFFFFF;margin:10px;font-family: 'Arimo', sans-serif;font-size: 20px;font-weight: 300;}
+.financeReport_Expense_spending >p{color: #FFFFFF;margin:10px;font-family: 'Inter', sans-serif;font-size: 35px;font-weight: 500;margin: 0;}
+.financeReport_Expense_next{display: flex;width: 100%;height: 30px;}
+.financeReport_Expense_next a,.financeReport_Expense_next a img{margin-left: auto;margin-right: 10px;width: 20px;height: 20px;cursor: pointer;}
+.financeReport_Expense_spending{display: flex;flex-direction: column;margin-top:100px;color: white;}
+.financeReport_Expense_max{display: flex;flex-direction: column;background-color: white;height: 40%;width: 90%;border-radius: 10px;align-items: center;margin-top: 100px;justify-content: center;align-items: center;}
+.financeReport_Expense_max p{font-family: 'Inter', sans-serif;font-size: 20px;font-weight: 600;color: black;margin: 5px 10px;}
+.financeReport_Income{background-color: #00A86B;}
+.financeReport_Expense_return{display: flex;justify-content: center;align-items: center;width: 100%;justify-content: start;}
+.financeReport_Expense_return h2{margin-left: 90px;}
+.financeReport_Expense_return a, .financeReport_Expense_return img{width: 20px;height: 20px;margin-left: 10px;}
+
+
+
+#expenseDetails{width: 300px;height: 600px;margin-top: 40px;display: flex;align-items: center;flex-direction: column;border: 1px solid lightgray;}
+#expenseDetails_top{display: flex;color: white;flex-direction: column;align-items: center;height: 40%;background-color: #FD3C4A;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;width: 100%;}
+#expenseDetails_top_tran{display: flex;justify-content: space-between;width: 100%;margin-bottom: 30px;}
+#expenseDetails_top_bill_det{display: flex;flex-direction: column;align-items: center;width: 100%;height: 50%;}
+#expenseDetails_top_bill_det p {margin: 5px;}
+#expenseDetails_mid{display: flex;flex-direction: column;align-items: center;margin: 20px 0;width: 85%;border-radius: 10px; border: 1px solid rgb(219,219,219);}
+#expenseDetails_mid_title,#expenseDetails_mid_value{display: flex;justify-content: space-between;width: 100%;margin: 5px 0;}
+
+
+#profile{width: 300px;height: 90%;display: flex;align-items: center;flex-direction: column;background-color: #EEE5FF;padding: 15px;}
+#profile_descr{width: 100%;height: 20%;display: flex;align-items: center;}
+#profile_descr img{width: 70px;height: 70px;border-radius: 30px;}
+#profile_descr_username{display: flex;flex-direction: column;align-items: center;margin-left: 15px;}
+#profile_descr_username > h3{font-family: 'Arimo', sans-serif;font-size: 13px;font-weight: 400;color: #9e9ea7;margin-top: 10px;}
+#profile_descr_username > p{font-family: 'Inter', sans-serif;font-size: 20px;font-weight: 500;color: black;}
+#profile_descr_edit{display: flex;justify-content: center;align-items: center;margin-left: auto;margin-right: 10px;}
+#profile_descr_edit img{width: 25px;height: 25px;}
+#profile_options{display: flex;width: 100%;flex-direction: column;align-items: center;margin-top: 70px;background-color: white;border-radius: 10px;height: 50%}
+.profile_options {display: flex;width: 100%;height: 70px;border-radius: 10px;border-bottom: 1px solid rgb(219,219,219);align-items: center;}
+.profile_options a{display: flex;align-items: center;}
+.profile_options  img{width: 30px;height: 30px;margin-right: 20px;margin-left: 10px;}
+.profile_options  p{font-family: 'Inter', sans-serif;font-size: 15px;font-weight: 500;color: black;}
+
+
+
+
+.settings_common{width: 300px;height: 600px;margin-top: 40px;display: flex;align-items: center;flex-direction: column;border: 1px solid lightgray;}
+.settings_common h4{margin-bottom: 50px;margin-top: 10px;font-family: 'Arimo', sans-serif;font-size: 20px;font-weight: 500;color: black;}
+.settings_common_main{display: flex;width: 100%;}
+.settings_common_back,.settings_common_back img{width: 20px;height: 20px;margin-right: 80px;margin-top: 8px;}
+.settings{display: flex;margin-bottom: 5px;width: 100%;height: 40px;align-items: center;}
+.settings h5{font-family: 'Arimo', sans-serif;font-size: 15px;font-weight: 500;color: black;margin-left: 10px;}
+.settings a p,.settings a{text-decoration:none;margin-left:  auto;font-family: 'Inter', sans-serif;font-size: 15px;font-weight: 500;color: #91919F;margin-right: 10px;}
+#line{width: 100%;height: 1px;background-color: #91919F;margin: 10px 0;}
+
+#language_setting{width: 100%;display: flex;flex-direction: column;}
+#language_setting p {margin-left: 5px;margin-bottom: 15px;}
