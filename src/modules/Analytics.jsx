@@ -8,7 +8,7 @@ export default function Analytics() {
   const dispatch = useDispatch();
   return (
     <Box mt={2}>
-      <Typography variant="h4" mb={1}>
+      <Typography color={"primary"} variant="h4" mb={1}>
         Analytics
       </Typography>
       <WeeklyExp />

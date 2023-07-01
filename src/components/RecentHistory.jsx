@@ -15,9 +15,11 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GET_TRANSACTIONS } from "../store/actions";
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 export default function RecentHistory() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { list } = useSelector((state) => state.transactions);
 
   useEffect(() => {
@@ -29,8 +31,10 @@ export default function RecentHistory() {
   return (
     <Box mt={2}>
       <Stack direction={"row"} justifyContent="space-between">
-        <Typography>Recent History</Typography>
-        <Button variant="outlined">See More</Button>
+        <Typography color={"primary"}>Recent History</Typography>
+        <Button onClick={() => navigate("/transactions")} variant="outlined">
+          See More
+        </Button>
       </Stack>
       <TableContainer component={Paper}>
         <Table aria-label="recent-expenses">

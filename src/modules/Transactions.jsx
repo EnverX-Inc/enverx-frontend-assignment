@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import DeleteTxn from "../components/DeleteTxn";
 import EditTxn from "../components/EditTxn";
 import { GET_TRANSACTIONS } from "../store/actions";
+import { format } from "date-fns";
 
 export default function Transactions() {
   const dispatch = useDispatch();
@@ -21,6 +22,16 @@ export default function Transactions() {
     { field: "description", headerName: "Description", width: 200 },
     { field: "category", headerName: "Category", width: 150 },
     {
+      field: "date",
+      headerName: "Date",
+      width: 150,
+      renderCell: (params) => (
+        <Typography>
+          {format(new Date(params.row.date), "MMMM d, yyyy")}
+        </Typography>
+      ),
+    },
+    {
       field: "actions",
       headerName: "Actions",
       width: 100,
@@ -34,7 +45,7 @@ export default function Transactions() {
   ];
   return (
     <Box mt={2}>
-      <Typography variant="h4" mb={1}>
+      <Typography color={"primary"} variant="h4" mb={1}>
         All Transactions
       </Typography>
       <DataGrid

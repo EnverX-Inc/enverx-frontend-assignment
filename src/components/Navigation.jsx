@@ -1,8 +1,14 @@
-import { Box, Stack, Typography, useTheme } from "@mui/material";
+import { Box, Stack, Switch, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { useDispatch, useSelector } from "react-redux";
+import { handleThemeChange } from "../store/slices/themeSlice";
 
 export default function Navigation() {
   const theme = useTheme();
+  const dispatch = useDispatch();
+  const { themeMode } = useSelector((state) => state.theme);
   return (
     <Stack
       direction={"row"}
@@ -27,6 +33,14 @@ export default function Navigation() {
           </Link>
         </Stack>
       </Box>
+      <Stack direction={"row"} alignItems={"center"}>
+        <LightModeIcon />
+        <Switch
+          checked={themeMode === "dark"}
+          onChange={() => dispatch(handleThemeChange())}
+        />
+        <DarkModeIcon />
+      </Stack>
     </Stack>
   );
 }
