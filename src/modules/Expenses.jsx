@@ -1,7 +1,8 @@
-import { Box, Dialog, DialogTitle, Typography } from "@mui/material";
+import { Box, Dialog, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import AddNewExpenseBtn from "../components/AddNewExpenseBtn";
 import ExpenseForm from "../components/ExpenseForm";
+import MonthlyIncome from "../components/MonthlyIncome";
 import RecentHistory from "../components/RecentHistory";
 import Summary from "../components/Summary";
 
@@ -29,7 +30,11 @@ export default function Expenses() {
         </Typography>
         <ExpenseForm handleClose={handleClose} />
       </Dialog>
-      <AddNewExpenseBtn onClick={() => setOpen(true)} />
+      <Stack direction="row" gap={2}>
+        <AddNewExpenseBtn onClick={() => setOpen(true)} />
+        <MonthlyIncome />
+      </Stack>
+
       <Summary />
       <RecentHistory />
     </Box>

@@ -1,6 +1,7 @@
 import {
   ADD_TRANSACTION,
   DELETE_TRANSACTION,
+  EDIT_INCOME,
   EDIT_TRANSACTION,
   GET_SUMMARY_REQUEST,
   GET_SUMMARY_SUCCESS,
@@ -10,6 +11,7 @@ import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
 import {
   addTransactionApi,
   deleteTransactionApi,
+  editIncomeApi,
   editTransactionApi,
   getSummaryApi,
   getTransactionsApi,
@@ -63,12 +65,23 @@ function* deleteTxnSaga({ id }) {
   }
 }
 
+function* editIncome(action) {
+  const newIncome = action?.payload;
+  try {
+    yield call(editIncomeApi, newIncome);
+    yield put({ type: GET_SUMMARY_REQUEST });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 function* mySaga() {
   yield takeLatest(GET_SUMMARY_REQUEST, getSummarySaga);
   yield takeLatest(GET_TRANSACTIONS, getTransactionSaga);
   yield takeLatest(ADD_TRANSACTION, addTransactionSaga);
   yield takeLatest(EDIT_TRANSACTION, editTransactionSaga);
   yield takeLatest(DELETE_TRANSACTION, deleteTxnSaga);
+  yield takeLatest(EDIT_INCOME, editIncome);
 }
 
 export default mySaga;

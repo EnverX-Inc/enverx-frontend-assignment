@@ -9,6 +9,19 @@ export const getSummaryApi = async () => {
   }
 };
 
+export const editIncomeApi = async (newIncome) => {
+  const docSnap = await getDoc(summaryRef);
+  if (docSnap.exists()) {
+    const data = docSnap.data();
+    const updatedDoc = {
+      ...data,
+      income: newIncome,
+    };
+
+    await updateDoc(summaryRef, updatedDoc);
+  }
+};
+
 export const getTransactionsApi = async () => {
   const docSnap = await getDoc(transactionRef);
   if (docSnap.exists()) {
