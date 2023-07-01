@@ -9,21 +9,31 @@ import Container from "@mui/material/Container";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import dayjs, { Dayjs } from "dayjs";
+import { useDispatch } from "react-redux";
+import { setTransactions } from "../features/transactions/transactionsSlice";
 
-function AddTransaction() {
+const AddTransaction: React.FC = () => {
   const [date, setDate] = React.useState<Dayjs | null>(dayjs());
+  const dispatch = useDispatch();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    //TODO: post submitted data to server
-
-    console.log({
-      description: data.get("description"),
-      amount: data.get("amount"),
-      category: data.get("category"),
-      date: date?.toDate().toLocaleDateString(),
-    });
+    const description = data?.get("description")
+      ? (data.get("description") as string)
+      : "";
+    const amount = data.get("amount") ? (data.get("amount") as string) : "";
+    const category = data.get("category")
+      ? (data.get("category") as string)
+      : "";
+    const transactionDate = date?.format("DD/MM/YYYY")
+      ? date?.format("DD/MM/YYYY")
+      : "";
+    dispatch(
+      setTransactions([
+        { description, amount, category, date: transactionDate },
+      ])
+    );
   };
 
   return (
@@ -80,6 +90,7 @@ function AddTransaction() {
                   label="Date"
                   value={date}
                   onChange={(newValue) => setDate(newValue)}
+                  format="DD/MM/YYYY"
                 />
               </Grid>
             </Grid>
@@ -93,9 +104,10 @@ function AddTransaction() {
             </Button>
           </Box>
         </Box>
+        <h2>{}</h2>
       </Container>
     </LocalizationProvider>
   );
-}
+};
 
 export default AddTransaction;
