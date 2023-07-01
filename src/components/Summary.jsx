@@ -45,12 +45,25 @@ export default function Summary() {
     setCategories(updatedArr);
   }, [list]);
 
+  const handleSavings = (income, expense) => {
+    const save = Number(income) - Number(expense);
+    if (save >= 0) {
+      return `+ ₹${save}`;
+    } else {
+      return `- ₹${save}`;
+    }
+  };
+
   return (
     <Stack direction={"row"} mt={2} gap={4} flexWrap={"wrap"}>
       <SummaryCard title={"INCOME"} description={`₹ ${income}`} />
       <SummaryCard
         title={"EXPENSES(this month)"}
         description={`₹ ${totalExp}`}
+      />
+      <SummaryCard
+        title={"SAVINGS"}
+        description={handleSavings(income, totalExp)}
       />
       <SummaryCard title={"CATEGORIES"} categories={categories} />
     </Stack>
