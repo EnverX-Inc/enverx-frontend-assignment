@@ -13,6 +13,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
+import { useDispatch } from "react-redux";
 
 import Transactions from "./Transactions";
 import AddTransaction from "./AddTransaction";
@@ -27,6 +28,11 @@ const defaultTheme = createTheme();
 const Dashboard: React.FC = () => {
   const [displayAddTransactionForm, setDisplayAddTransactionForm] =
     React.useState(false);
+  const dispatch = useDispatch();
+  //fetch data on initial render
+  React.useEffect(() => {
+    dispatch({ type: "user/fetchData", payload: "" });
+  }, [dispatch]);
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: "flex" }}>
