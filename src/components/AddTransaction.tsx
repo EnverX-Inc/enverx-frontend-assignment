@@ -10,30 +10,49 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import dayjs, { Dayjs } from "dayjs";
 import { useDispatch } from "react-redux";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
-const AddTransaction = () => {
+interface FormValues {
+  description: string;
+  amount: string;
+  category: string;
+}
+
+const AddTransaction: React.FC = () => {
   const [date, setDate] = React.useState<Dayjs | null>(dayjs());
   const dispatch = useDispatch();
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const description = data?.get("description")
-      ? (data.get("description") as string)
-      : "";
-    const amount = data.get("amount") ? (data.get("amount") as string) : "";
-    const category = data.get("category")
-      ? (data.get("category") as string)
-      : "";
-    const transactionDate = date?.format("DD/MM/YYYY")
-      ? date?.format("DD/MM/YYYY")
-      : "";
-    //Update data in firebase database
+  const handleSubmit = (values: FormValues) => {
+    const { description, amount, category } = values;
+    const transactionDate = date?.format("DD/MM/YYYY") || "";
+
+    console.log(description, amount, category, transactionDate);
+
+    // Update data in firebase database
     dispatch({
       type: "user/addData",
       payload: { description, amount, category, date: transactionDate },
     });
   };
+
+  const validationSchema = Yup.object({
+    description: Yup.string().required("Description is required"),
+    amount: Yup.number().required("Amount is required"),
+    category: Yup.string().required("Category is required"),
+  });
+
+  const formik = useFormik({
+    initialValues: {
+      description: "",
+      amount: "",
+      category: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      handleSubmit(values);
+    },
+  });
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -52,7 +71,7 @@ const AddTransaction = () => {
           <Box
             component="form"
             noValidate
-            onSubmit={handleSubmit}
+            onSubmit={formik.handleSubmit}
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
@@ -64,6 +83,15 @@ const AddTransaction = () => {
                   id="description"
                   label="Description"
                   autoFocus
+                  value={formik.values.description}
+                  onChange={formik.handleChange}
+                  error={
+                    formik.touched.description &&
+                    Boolean(formik.errors.description)
+                  }
+                  helperText={
+                    formik.touched.description && formik.errors.description
+                  }
                 />
               </Grid>
               <Grid item xs={6}>
@@ -73,6 +101,10 @@ const AddTransaction = () => {
                   id="amount"
                   label="Amount"
                   name="amount"
+                  value={formik.values.amount}
+                  onChange={formik.handleChange}
+                  error={formik.touched.amount && Boolean(formik.errors.amount)}
+                  helperText={formik.touched.amount && formik.errors.amount}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -82,6 +114,12 @@ const AddTransaction = () => {
                   id="category"
                   label="Category"
                   name="category"
+                  value={formik.values.category}
+                  onChange={formik.handleChange}
+                  error={
+                    formik.touched.category && Boolean(formik.errors.category)
+                  }
+                  helperText={formik.touched.category && formik.errors.category}
                 />
               </Grid>
               <Grid item xs={6}>
