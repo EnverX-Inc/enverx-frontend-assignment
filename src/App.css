@@ -1,0 +1,17 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-center;
+    justify-content: flex-center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  /* Additional styles for the rest of your application */
+  
