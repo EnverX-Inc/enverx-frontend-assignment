@@ -3,7 +3,7 @@ import { takeLatest, call, put } from "redux-saga/effects";
 import { firestore } from "../firebaseSetup";
 import { getDocs, addDoc, collection, query } from "firebase/firestore";
 import { all } from "redux-saga/effects";
-
+import { QuerySnapshot } from "firebase/firestore";
 import {
   setTransactions,
   transaction,
@@ -16,13 +16,14 @@ interface AddTransactionSaga extends PayloadAction<transaction> {
   payload: transaction;
 }
 
-function* fetchTransactionsSaga(action: FetchTransactionsSagaAction) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function* fetchTransactionsSaga(_action: FetchTransactionsSagaAction) {
   const UsersCollectionRef = collection(firestore, "app-database");
 
   try {
     // Create a Firestore query to fetch user data
     const q = query(UsersCollectionRef);
-    const querySnapshot = yield call(getDocs, q);
+    const querySnapshot: QuerySnapshot = yield call(getDocs, q);
     const data: transaction[] = [];
     querySnapshot.forEach((doc) => {
       // Push each document's data to the data array
