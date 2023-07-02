@@ -10,9 +10,8 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import dayjs, { Dayjs } from "dayjs";
 import { useDispatch } from "react-redux";
-import { setTransactions } from "../features/transactions/transactionsSlice";
 
-const AddTransaction: React.FC = () => {
+const AddTransaction = () => {
   const [date, setDate] = React.useState<Dayjs | null>(dayjs());
   const dispatch = useDispatch();
 
@@ -29,11 +28,11 @@ const AddTransaction: React.FC = () => {
     const transactionDate = date?.format("DD/MM/YYYY")
       ? date?.format("DD/MM/YYYY")
       : "";
-    dispatch(
-      setTransactions([
-        { description, amount, category, date: transactionDate },
-      ])
-    );
+    //Update data in firebase database
+    dispatch({
+      type: "user/addData",
+      payload: { description, amount, category, date: transactionDate },
+    });
   };
 
   return (
