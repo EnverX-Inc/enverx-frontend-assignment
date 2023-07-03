@@ -1,0 +1,11 @@
+# Ignore all files with the .json extension
+*.json
+
+# Ignore all files with the .md and .txt extensions
+*.md
+*.txt
+
+# Ignore node modules and production build
+node_modules
+dist
+coverage
