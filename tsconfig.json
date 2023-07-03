@@ -16,5 +16,5 @@
     "allowSyntheticDefaultImports": true,
     "strict": true
   },
-  "include": ["src"]
+  "include": ["src", "__tests__/DashBoard.test.tsx"]
 }
