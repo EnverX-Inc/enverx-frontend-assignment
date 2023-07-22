@@ -9,5 +9,5 @@ const persistConfig = {
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
-let store = createStore(persistedReducer);
-let persistor = persistStore(store);
+export let store = createStore(persistedReducer);
+export let persistor = persistStore(store);
