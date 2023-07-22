@@ -2,7 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import Balance from "../components/Balance";
 
-export const Main = (props) => {
+export const Main = ({ transctions }) => {
+  console.log(transctions);
   return (
     <div>
       <Balance />
@@ -10,7 +11,9 @@ export const Main = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  transctions: state.transctions,
+});
 
 const mapDispatchToProps = (dispatch) => ({});
 
