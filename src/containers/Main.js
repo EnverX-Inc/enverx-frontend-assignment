@@ -6,7 +6,7 @@ export const Main = ({ transctions }) => {
   console.log(transctions);
   return (
     <div>
-      <Balance />
+      <Balance transctions={transctions} />
     </div>
   );
 };
