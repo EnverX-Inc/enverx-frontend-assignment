@@ -15,6 +15,9 @@ const AddTransactions = ({ id, addTransaction }) => {
     };
     // console.log(newTransaction);
     addTransaction(newTransaction);
+    setDesc("");
+    setAmount(0);
+    setDate("");
   }
 
   return (
@@ -44,7 +47,6 @@ const AddTransactions = ({ id, addTransaction }) => {
           <input
             value={date}
             onChange={(event) => setDate(event.target.value)}
-            placeholder="Enter Amount.."
             type="date"
           />
         </div>

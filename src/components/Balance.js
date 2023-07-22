@@ -9,7 +9,7 @@ const Balance = ({ transactions }) => {
   return (
     <div>
       <h4>Balance</h4>
-      <div>₹{total}</div>
+      <h1>₹{total}</h1>
     </div>
   );
 };
