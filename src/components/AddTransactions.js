@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const AddTransactions = ({ id, addTransaction }) => {
   const [desc, setDesc] = useState("");
   const [amount, setAmount] = useState(0);
+  const [date, setDate] = useState("");
 
   function submitHandler(event) {
     event.preventDefault();
@@ -10,6 +11,7 @@ const AddTransactions = ({ id, addTransaction }) => {
       id: id,
       desc: desc,
       amount: amount,
+      date: date,
     };
     // console.log(newTransaction);
     addTransaction(newTransaction);
@@ -35,6 +37,15 @@ const AddTransactions = ({ id, addTransaction }) => {
             onChange={(event) => setAmount(event.target.value)}
             placeholder="Enter Amount.."
             type="number"
+          />
+        </div>
+        <div className="form-control">
+          <label>Date</label>
+          <input
+            value={date}
+            onChange={(event) => setDate(event.target.value)}
+            placeholder="Enter Amount.."
+            type="date"
           />
         </div>
         <button className="btn">Add Transaction</button>

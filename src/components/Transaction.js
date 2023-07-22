@@ -6,6 +6,7 @@ const Transaction = ({ transaction, deleteTransaction }) => {
     <li className={transaction.amount >= 0 ? "plus" : "minus"}>
       {transaction.desc}
       <span>
+        <span style={{ marginRight: 10 }}>{transaction.date}</span>
         {sign}₹{Math.abs(transaction.amount)}
       </span>
       <button
