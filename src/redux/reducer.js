@@ -1,14 +1,19 @@
+import { ADD_TRANSACTION } from "./action";
+
 const initialState = {
-  transctions: [
-    { id: 1, text: "test", amount: 10 },
-    { id: 2, text: "test", amount: 20 },
-    { id: 3, text: "test", amount: 15 },
-    { id: 4, text: "test", amount: 15 },
-  ],
+  transctions: [],
 };
 
 const expenseTrackerReducer = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case ADD_TRANSACTION:
+      return {
+        ...state,
+        transctions: [action.payload, ...state.transctions],
+      };
+    default:
+      return state;
+  }
 };
 
 export default expenseTrackerReducer;
