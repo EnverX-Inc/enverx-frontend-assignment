@@ -15,17 +15,23 @@ body {
   justify-content: center;
   min-height: 100vh;
   margin: 0;
+  background-color: #faf5f5;
   font-family: "lato", sans-seirf;
 }
 
 .container {
   margin: 30px auto;
-  width: 350px;
+  width: 600px;
 }
 
 h1 {
   letter-spacing: 1px;
   margin: 0;
+}
+
+.heading {
+  color: #8973fa;
+  margin: 1rem 0;
 }
 
 h3 {
@@ -138,7 +144,7 @@ input {
   padding: 2px 5px;
   position: absolute;
   top: 50%;
-  left: 0;
+  right: -60px;
   transform: translate(-100%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -146,4 +152,8 @@ input {
 
 .list li:hover .delete-btn {
   opacity: 1;
+}
+
+.note {
+  font-size: 12px;
 }

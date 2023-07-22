@@ -34,7 +34,9 @@ const AddTransactions = ({ id, addTransaction }) => {
           />
         </div>
         <div className="form-control">
-          <label>Amount</label>
+          <label>
+            Amount <span className="note">[Note : + Income, - Expense]</span>
+          </label>
           <input
             value={amount}
             onChange={(event) => setAmount(event.target.value)}

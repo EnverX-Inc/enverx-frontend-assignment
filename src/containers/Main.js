@@ -9,7 +9,7 @@ import IncomeExpense from "../components/IncomeExpense";
 export const Main = ({ transactions, addTransaction, deleteTransaction }) => {
   console.log(transactions);
   return (
-    <div>
+    <div className="container">
       <Balance transactions={transactions} />
       <IncomeExpense transactions={transactions} />
       <TransactionsList
