@@ -1,7 +1,7 @@
 import { ADD_TRANSACTION } from "./action";
 
 const initialState = {
-  transctions: [],
+  transactions: [],
 };
 
 const expenseTrackerReducer = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const expenseTrackerReducer = (state = initialState, action) => {
     case ADD_TRANSACTION:
       return {
         ...state,
-        transctions: [action.payload, ...state.transctions],
+        transactions: [action.payload, ...state.transactions],
       };
     default:
       return state;

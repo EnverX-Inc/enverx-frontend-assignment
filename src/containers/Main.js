@@ -3,26 +3,28 @@ import { connect } from "react-redux";
 import Balance from "../components/Balance";
 import AddTransactions from "../components/AddTransactions";
 import { addTransaction } from "../redux/action";
+import TransactionsList from "../components/TransactionsList";
 
-export const Main = ({ transctions, addTransaction }) => {
-  console.log(transctions);
+export const Main = ({ transactions, addTransaction }) => {
+  console.log(transactions);
   return (
     <div>
-      <Balance transctions={transctions} />
+      <Balance transactions={transactions} />
+      <TransactionsList transactions={transactions} />
       <AddTransactions
         addTransaction={(transction) => addTransaction(transction)}
-        id={transctions[0] ? transctions[0].id + 1 : 1}
+        id={transactions[0] ? transactions[0].id + 1 : 1}
       />
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
-  transctions: state.transctions,
+  transactions: state.transactions,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addTransaction: (transctions) => dispatch(addTransaction(transctions)),
+  addTransaction: (transactions) => dispatch(addTransaction(transactions)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);

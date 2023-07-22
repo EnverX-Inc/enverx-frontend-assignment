@@ -1,9 +1,9 @@
 import React from "react";
 
-const Balance = ({ transctions }) => {
-  console.log(transctions);
+const Balance = ({ transactions }) => {
+  console.log(transactions);
 
-  const amount = transctions.map((transction) => Number(transction.amount));
+  const amount = transactions.map((transction) => Number(transction.amount));
   const total = amount.reduce((acc, item) => acc + item, 0);
 
   return (
