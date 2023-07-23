@@ -50,3 +50,4 @@ The approximate duration for completing this assignment is expected to be around
 3. Please ensure that you carefully follow the instructions provided, as we will be assessing your code, documentation, and adherence to best practices. Once you have completed the assignment, kindly share the GitHub repository link with us.
 4. If you have any questions or need further clarification, please don't hesitate to reach out to us at hr@enverx.com. We look forward to reviewing your work and discussing it with you in the next stage of the interview process.
 
+>>>>>>> 6274bd92cda5abc0f61c68117b7508346c0ed0a7
