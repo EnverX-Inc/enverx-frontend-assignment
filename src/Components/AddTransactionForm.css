@@ -1,0 +1,27 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9d0;
+  }
+  
+  /* Style for the text fields */
+  .MuiTextField-root {
+    width: 100%;
+  }
+  
+  /* Style for the select input */
+  .MuiFormControl-root {
+    width: 100%;
+  }
+  
+  /* Style for the button */
+  .MuiButton-root {
+    width: 100%;
+  }
+  
